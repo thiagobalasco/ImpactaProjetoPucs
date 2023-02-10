@@ -1,0 +1,36 @@
+﻿@model PucsMVC.Models.EF.Modelo
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Modelo</h4>
+    <hr />
+    <div class="row">
+    <div class="col-md-6">
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeModelo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NomeModelo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Marca)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Marca.Id)
+        </dd>
+    </dl>
+
+
+<div class="form-group text-right">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="k-button k-primary" style="margin-right:10px;"><span class="k-icon k-i-edit"></span>&nbsp;Edit</a>
+        <a asp-action="Index" class="k-button"><span class="k-icon k-i-grid"></span>&nbsp;Back to Grid</a>
+</div>
+</div>
+</div>
+</div>

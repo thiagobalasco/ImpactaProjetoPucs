@@ -1,0 +1,60 @@
+﻿@model PucsMVC.Models.EF.Apolice
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Apolice</h4>
+    <hr />
+    <div class="row">
+    <div class="col-md-6">
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.ClasseBonus)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ClasseBonus)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdentificacaoApolice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdentificacaoApolice)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataInicioVigencia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataInicioVigencia)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataFimVigencia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataFimVigencia)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Modelo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Modelo.Id)
+        </dd>
+    </dl>
+
+
+<div class="form-group text-right">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="k-button k-primary" style="margin-right:10px;"><span class="k-icon k-i-edit"></span>&nbsp;Edit</a>
+        <a asp-action="Index" class="k-button"><span class="k-icon k-i-grid"></span>&nbsp;Back to Grid</a>
+</div>
+</div>
+</div>
+</div>

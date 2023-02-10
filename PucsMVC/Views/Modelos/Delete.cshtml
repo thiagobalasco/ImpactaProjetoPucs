@@ -1,0 +1,39 @@
+﻿@model PucsMVC.Models.EF.Modelo
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Modelo</h4>
+    <hr />
+    <div class="row">
+    <div class="col-md-6">
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeModelo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NomeModelo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Marca)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Marca.Id)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+     <div class="form-group text-right">
+        <kendo-button type="submit" name="confirmDelete" icon="delete" class="k-button k-error-colored" style="margin-right:10px">&nbsp;Delete</kendo-button>
+        <a asp-action="Index" class="k-button"><span class="k-icon k-i-cancel"></span>&nbsp;Cancel</a>
+     </div>
+    </form>
+</div>
+</div>
+</div>

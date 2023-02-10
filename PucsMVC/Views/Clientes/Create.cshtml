@@ -1,0 +1,117 @@
+﻿@model PucsMVC.Models.EF.Cliente
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<br />
+<h4>Cadastro de Cliente</h4>
+<hr />
+<form asp-action="Create" id="ClienteForm">
+    <div class="container">
+        <div class="row">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="col-md-6 mb-4">
+                <label asp-for="RazaoSocial"></label>
+                <input asp-for="RazaoSocial" class="form-control" />
+                <span asp-validation-for="RazaoSocial" class="text-danger k-invalid-msg" data-for="RazaoSocial"></span>
+            </div>
+            <div class="col-md-6 mb-4">
+                <label asp-for="Fantasia"></label>
+                <input asp-for="Fantasia" class="form-control" />
+                <span asp-validation-for="Fantasia" class="text-danger k-invalid-msg" data-for="Fantasia"></span>
+            </div>
+            <div class="col-md-6 mb-4">
+                <label asp-for="CNPJ"></label>
+                <input asp-for="CNPJ" class="form-control" />
+                <span asp-validation-for="CNPJ" class="text-danger k-invalid-msg" data-for="CNPJ"></span>
+            </div>
+            <div class="col-md-6 mb-4">
+                <label asp-for="IE"></label>
+                <input asp-for="IE" class="form-control" />
+                <span asp-validation-for="IE" class="text-danger k-invalid-msg" data-for="IE"></span>
+            </div>
+            <div class="col-md-6 mb-4">
+                <label asp-for="Cep"></label>
+                <input asp-for="Cep" class="form-control" />
+                <span asp-validation-for="Cep" class="text-danger k-invalid-msg" data-for="Cep"></span>
+            </div>
+            <div class="col-md-6 mb-4">
+                <label asp-for="Endereco"></label>
+                <input asp-for="Endereco" class="form-control" />
+                <span asp-validation-for="Endereco" class="text-danger k-invalid-msg" data-for="Endereco"></span>
+            </div>
+            <div class="col-md-6 mb-4">
+                <label asp-for="Bairro"></label>
+                <input asp-for="Bairro" class="form-control" />
+                <span asp-validation-for="Bairro" class="text-danger k-invalid-msg" data-for="Bairro"></span>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <label asp-for="Municipio"></label>
+                <input asp-for="Municipio" class="form-control" />
+                <span asp-validation-for="Municipio" class="text-danger k-invalid-msg" data-for="Municipio"></span>
+            </div>
+            <div class="col-md-6 mb-4">
+                <label asp-for="UF"></label>
+                <input asp-for="UF" class="form-control" />
+                <span asp-validation-for="UF" class="text-danger k-invalid-msg" data-for="UF"></span>
+            </div>
+            <div class="col-md-6 mb-4">
+                <label asp-for="Numero"></label>
+                <input asp-for="Numero" class="form-control" />
+                <span asp-validation-for="Numero" class="text-danger k-invalid-msg" data-for="Numero"></span>
+            </div>
+            <div class="col-md-6 mb-4">
+                <label asp-for="Complemento"></label>
+                <input asp-for="Complemento" class="form-control" />
+                <span asp-validation-for="Complemento" class="text-danger k-invalid-msg" data-for="Complemento"></span>
+            </div>
+            <div class="col-md-6 mb-4">
+                <label asp-for="Status"></label>
+                <input asp-for="Status" class="form-control" />
+                <span asp-validation-for="Status" class="text-danger k-invalid-msg" data-for="Status"></span>
+            </div>
+            <div class="col-md-6 mb-4">
+                <label asp-for="DDD"></label>
+                <input asp-for="DDD" class="form-control" />
+                <span asp-validation-for="DDD" class="text-danger k-invalid-msg" data-for="DDD"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger k-invalid-msg" data-for="Email"></span>
+            </div>
+            <div class="col-md-6 mb-4">
+                <label asp-for="Tel1"></label>
+                <input asp-for="Tel1" class="form-control" />
+                <span asp-validation-for="Tel1" class="text-danger k-invalid-msg" data-for="Tel1"></span>
+            </div>
+            <div class="col-md-6 mb-4">
+                <label asp-for="Tel2"></label>
+                <input asp-for="Tel2" class="form-control" />
+                <span asp-validation-for="Tel2" class="text-danger k-invalid-msg" data-for="Tel2"></span>
+            </div>
+            <div class="col-md-6 mb-4">
+                <label asp-for="Observacao"></label>
+                <input asp-for="Observacao" class="form-control" />
+                <span asp-validation-for="Observacao" class="text-danger k-invalid-msg" data-for="Observacao"></span>
+            </div>
+            <div class="form-group text-right">
+                <a asp-action="Index" class="k-button" style="margin-right:10px;"><span class="k-icon k-i-cancel"></span>&nbsp;Cancel</a>
+                <kendo-button type="submit" name="confirmCreate" icon="check" class="k-primary">Create</kendo-button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script>
+    $(document).ready(function () {
+        $("#ClienteForm").kendoValidator({
+            // You can define your custom rules here:
+            //rules: {}
+        });
+    })
+</script>

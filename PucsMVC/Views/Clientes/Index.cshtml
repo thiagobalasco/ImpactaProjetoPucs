@@ -1,0 +1,86 @@
+﻿@{
+     ViewData["Title"] = "Lista de clientes";
+}
+<br />
+<h3>Lista de clientes</h3>
+
+ <kendo-grid name="ClientesGrid" height="550" on-change="handleChange" selectable="true">
+    <columns>
+     <column field="RazaoSocial" title="Nome" />
+     <column field="CNPJ" title="Documento" />
+     <column field="Cep" title="Cep" />
+     <column field="Municipio" title="Municipio" />
+  
+    </columns>
+    <toolbar>
+        <toolbar-button name="excel"/>
+        <toolbar-button name="pdf"/>
+        <toolbar-button name="create" template="tbCreate"/>
+        <toolbar-button name="edit" template="tbEdit"/>
+        <toolbar-button name="details" template="tbDetails"/>
+        <toolbar-button name="delete" template="tbDelete"/>
+    </toolbar>
+    <excel all-pages="true" />
+    <groupable enabled="true" />
+    <sortable enabled="true" />
+    <pageable button-count="5" refresh="true" />
+    <filterable enabled="true" />
+    <datasource type="DataSourceTagHelperType.Ajax" page-size="20">
+        <schema>
+            <model>
+                <fields>
+                  <field name="RazaoSocial" type="string" />
+              
+                  <field name="CNPJ" type="string" />
+             
+                  <field name="Cep" type="string" />
+                  <field name="Municipio" type="string" />
+              
+                </fields>
+            </model>
+        </schema>
+        <transport>
+            <read url="@Url.Action("Clientes_Read")" />
+        </transport>
+    </datasource>
+ </kendo-grid>
+ <script>
+     function tbCreate(data) {
+         return `<a id='tbCreate' href='${location.pathname}/create' class='k-button'>Create</a>`;
+     };
+     function tbDetails(data) {
+         return `<a id='tbDetails'>Details</a>`;
+     };
+     function tbEdit(data) {
+         return `<a id='tbEdit'>Edit</a>`;
+     };
+     function tbDelete(data) {
+         return `<a id='tbDelete'>Delete</a>`;
+     };
+     function handleChange(args) {
+         let enabled = this.select().length != 0;
+         toolBar.edit.enable(enabled);
+         toolBar.details.enable(enabled);
+         toolBar.del.enable(enabled);
+         if (enabled) {
+              let selectedId = this.dataItem(this.select()).Id;
+              toolBar.edit.wrapper.attr("href", `${location.pathname}/edit/${selectedId}`);
+              toolBar.details.wrapper.attr("href", `${location.pathname}/details/${selectedId}`);
+              toolBar.del.wrapper.attr("href", `${location.pathname}/delete/${selectedId}`);
+          } else {
+              toolBar.edit.wrapper.attr("href", "#");
+              toolBar.details.wrapper.attr("href", "#");
+              toolBar.details.wrapper.attr("href", "#");
+          }
+     };
+    let toolBar;
+         $(function () {
+             // references to UI elements
+             toolBar = {
+                  create: $("#tbCreate").kendoButton().data("kendoButton"),
+                  edit: $("#tbEdit").kendoButton({ enable: false }).data("kendoButton"),
+                  details: $("#tbDetails").kendoButton({ enable: false }).data("kendoButton"),
+                  del: $("#tbDelete").kendoButton({ enable: false }).data("kendoButton")
+             };
+        });
+ </script>

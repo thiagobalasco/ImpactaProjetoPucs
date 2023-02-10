@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PucsMVC", "PucsMVC\PucsMVC.csproj", "{FBA06F2B-7D44-41F0-8F8E-1A81288B7469}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FBA06F2B-7D44-41F0-8F8E-1A81288B7469}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBA06F2B-7D44-41F0-8F8E-1A81288B7469}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBA06F2B-7D44-41F0-8F8E-1A81288B7469}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBA06F2B-7D44-41F0-8F8E-1A81288B7469}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {67BB4DFA-F036-440F-91E7-922F30162756}
+	EndGlobalSection
+EndGlobal

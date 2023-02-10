@@ -1,0 +1,65 @@
+﻿@model PucsMVC.Models.EF.Apolice
+
+    @{
+    ViewData["Title"] = "Edit";
+    }
+    
+    <h1>Edit</h1>
+    
+        <h4>Apolice</h4>
+        <hr />
+        <div class="row">
+            <div class="col-md-6">
+                <form asp-action="Edit" id="ApoliceForm">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="ClasseBonus"></label>
+                        <input asp-for="ClasseBonus" class="form-control" />
+                        <span asp-validation-for="ClasseBonus" class="text-danger k-invalid-msg" data-for="ClasseBonus"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="IdentificacaoApolice"></label>
+                        <input asp-for="IdentificacaoApolice" class="form-control" />
+                        <span asp-validation-for="IdentificacaoApolice" class="text-danger k-invalid-msg" data-for="IdentificacaoApolice"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DataInicioVigencia"></label>
+                        <kendo-datetimepicker for="DataInicioVigencia" style="width:100%"/>
+                        <span asp-validation-for="DataInicioVigencia" class="text-danger k-invalid-msg" data-for="DataInicioVigencia"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DataFimVigencia"></label>
+                        <kendo-datetimepicker for="DataFimVigencia" style="width:100%"/>
+                        <span asp-validation-for="DataFimVigencia" class="text-danger k-invalid-msg" data-for="DataFimVigencia"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ClienteId" class="control-label"></label>
+                        <select asp-for="ClienteId" class="form-control" asp-items="ViewBag.ClienteId"></select>
+                        <span asp-validation-for="ClienteId" class="text-danger"></span>
+                        
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ModeloId" class="control-label"></label>
+                        <select asp-for="ModeloId" class="form-control" asp-items="ViewBag.ModeloId"></select>
+                        <span asp-validation-for="ModeloId" class="text-danger"></span>
+                        
+                    </div>
+                    <input type="hidden" asp-for="Id" />
+<div class="form-group text-right">
+    <a asp-action="Index" class="k-button" style="margin-right:10px"><span class="k-icon k-i-cancel"></span>&nbsp;Cancel</a>
+    <kendo-button type="submit" name="confirmEdit" icon="check" class="k-primary">Save</kendo-button>
+</div>
+</form>
+
+</div>
+
+</div>
+
+    <script>
+        $(document).ready(function () {
+            $("#ApoliceForm").kendoValidator({
+                // You can define your custom rules here:
+                //rules: {}
+            });
+        })
+    </script>
